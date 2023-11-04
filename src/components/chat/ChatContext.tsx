@@ -28,19 +28,19 @@ export const ChatContextProvider = ({fileId, children}:Props) =>{
 
   const { mutate: sendMessage} = useMutation({
     mutationFn:async ({message}:{message:string}) => {
-        const response = await fetch('/api/message',{
-            method:'POST',
-            body: JSON.stringify({
-                fileId,
-                message
-            })
-        })
+        // const response = await fetch('/api/message',{
+        //     method:'POST',
+        //     body: JSON.stringify({
+        //         fileId,
+        //         message
+        //     })
+        // })
     
         
-        if(!response.ok){
-            throw new Error("Failed to send message")
-        }
-        return response.body
+        // if(!response.ok){
+        //     throw new Error("Failed to send message")
+        // }
+        return {Success : true}
     }
   })
 
